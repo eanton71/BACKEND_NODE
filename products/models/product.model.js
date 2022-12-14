@@ -67,3 +67,21 @@ exports.deleteProduct = (id) => {
         throw error.message;
     })
 }
+
+exports.putProduct = (id) => {
+    return new Promise((resolve, reject) => {
+        Products.updateOne({ _id: id }).exec((error, result) => {
+            if (error) {
+                reject(error.message);
+                throw error.message;
+            }
+            if (result.deletedCount) {
+                resolve(true);
+            } else {
+                resolve(false);
+            }
+        })
+    }).catch(error => {
+        throw error.message;
+    })
+}
