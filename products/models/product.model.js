@@ -15,7 +15,7 @@ const productsSchema = new mongoose.Schema({
 
         type:mongoose.Schema.Types.String
     }
-}, { versionKey: false })
+}, {versionKey:false})
 
 productsSchema.set('toJSON', { virtuals: false });
 const Products = mongoose.model('products', productsSchema, 'products');
@@ -41,12 +41,13 @@ exports.getProducts = () => {
 }
 
 exports.addProduct = (info) => {
-    try {
-        const product = new Products(ínfo);
+    try{
+        const product = new Products(info);
+        console.log(product)
         return product.save().catch(error => error.message);
 
-    } catch (error) {
-        throw error.message
+    }catch(error){
+        throw error.message;
     }
 }
 
