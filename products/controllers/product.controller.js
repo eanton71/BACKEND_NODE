@@ -5,10 +5,10 @@ exports.getAllProducts = (request, response) => {
 
     console.log('received getAllproducts request');
     productModel.getProducts().then((products, error) => {
-        if (error) {
+        if (error) { 
             throw error.message;
         }
-        if (products) {
+        if (products) { 
             return response.status(200).send(products);
         } else {
             return response.status(204);
@@ -52,7 +52,7 @@ exports.deleteProduct = (request, response) => {
     })
 }
 
-
+/*
 exports.putProduct = (request, response) => {
     console.log('received putProduct request');
     productModel.putProduct(request.params.id).then((product, error) => {
@@ -69,3 +69,4 @@ exports.putProduct = (request, response) => {
         throw error.message;
     })
 }
+*/

@@ -23,7 +23,7 @@ const Products = mongoose.model('products', productsSchema, 'products');
 exports.getProducts = () => {
     return new Promise((resolve, reject) => {
         Products.fínd({}).exec((error, result) => {
-            if (error) {
+            if (error) { 
                 reject(error.message);
                 throw error.message;
             }
@@ -38,9 +38,8 @@ exports.getProducts = () => {
 
 exports.addProduct = (info) => {
     try{
-        const product = new Products(info);
-        console.log(product)
-        return product.save().catch(error=>error.message);
+        const product = new Products(info); 
+        return product.save().catch(error => { error.message });
 
     }catch(error){
         throw error.message;
@@ -64,7 +63,7 @@ exports.deleteProduct = (id) => {
         throw error.message;
     })
 }
-
+/*
 exports.putProduct = (id) => {
     return new Promise((resolve, reject) => {
         Products.updateOne({ _id: id }).exec((error, result) => {
@@ -82,3 +81,4 @@ exports.putProduct = (id) => {
         throw error.message;
     })
 }
+*/
