@@ -26,9 +26,7 @@ exports.getProducts = () => {
             if (error) {
                 reject(error.message);
                 throw error.message;
-
             }
-
             if (result) {
                 resolve(result);
             }
