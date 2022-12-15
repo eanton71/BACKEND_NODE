@@ -25,6 +25,8 @@ exports.addProduct = (request, response) => {
             throw error.message;
         }
         if (product) {
+
+            console.log("Product: ", product);
             return response.status(200).send({ info: true });
         } else {
             console.error('error adding product');

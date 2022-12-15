@@ -22,7 +22,7 @@ const Products = mongoose.model('products', productsSchema, 'products');
 
 exports.getProducts = () => {
     return new Promise((resolve, reject) => {
-        Products.fínd({}).exec((error, result) => {
+        Products.find({}).exec((error, result) => {
             if (error) { 
                 reject(error.message);
                 throw error.message;
