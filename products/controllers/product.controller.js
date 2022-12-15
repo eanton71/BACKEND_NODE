@@ -9,7 +9,7 @@ exports.getAllProducts = (request, response) => {
             throw error.message;
         }
         if (products) {
-            return response.status(290).send(products);
+            return response.status(200).send(products);
         } else {
             return response.status(204);
         }

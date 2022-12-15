@@ -31,11 +31,9 @@ exports.getProducts = () => {
 
             if (result) {
                 resolve(result);
-
             }
         })
     }).catch(error => {
-
         throw error.message;
     })
 }
