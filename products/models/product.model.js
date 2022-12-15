@@ -44,7 +44,7 @@ exports.addProduct = (info) => {
     try{
         const product = new Products(info);
         console.log(product)
-        return product.save().catch(error => error.message);
+        return product.save().catch(error=>error.message);
 
     }catch(error){
         throw error.message;
