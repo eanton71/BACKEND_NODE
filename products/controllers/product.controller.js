@@ -54,9 +54,10 @@ exports.deleteProduct = (request, response) => {
     })
 }
 
-/*
+ 
 exports.putProduct = (request, response) => {
     console.log('received putProduct request');
+    console.log('products\controllers\product.controller.js, exports.putProduct', request.params);
     productModel.putProduct(request.params.id).then((product, error) => {
         if (error) {
             throw error.message;
@@ -71,4 +72,4 @@ exports.putProduct = (request, response) => {
         throw error.message;
     })
 }
-*/
+ 
