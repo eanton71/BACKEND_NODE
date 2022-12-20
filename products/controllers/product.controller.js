@@ -54,7 +54,7 @@ exports.deleteProduct = (request, response) => {
     })
 }
 
- 
+/* 
 exports.putProduct = (request, response) => {
     console.log('received putProduct request');
     console.log('products\controllers\product.controller.js, exports.putProduct', request.params);
@@ -72,4 +72,4 @@ exports.putProduct = (request, response) => {
         throw error.message;
     })
 }
- 
+ */

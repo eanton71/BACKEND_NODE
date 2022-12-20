@@ -64,6 +64,7 @@ exports.deleteProduct = (id) => {
     })
 }
 // TODO buscar funcion en mongoose 
+/*
 exports.putProduct = (id) => {
     return new Promise((resolve, reject) => {
         Products.updateOne({ _id: id }).exec((error, result) => {
@@ -81,3 +82,4 @@ exports.putProduct = (id) => {
         throw error.message;
     })
 }
+*/
