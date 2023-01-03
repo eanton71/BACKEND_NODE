@@ -64,15 +64,17 @@ exports.deleteProduct = (id) => {
     })
 }
 // TODO buscar funcion en mongoose 
-/*
-exports.putProduct = (id) => {
+
+exports.putProduct = (data) => {
     return new Promise((resolve, reject) => {
-        Products.updateOne({ _id: id }).exec((error, result) => {
+       // Products.updateOne({ _id: data.id },{$set:{name:data.name,price:data.price,description:data.description}}).exec((error, result) => {
+        Products.updateOne({ _id: data.id }, { $set:data}).exec((error, result) => {  
             if (error) {
                 reject(error.message);
                 throw error.message;
             }
-            if (result.deletedCount) {
+            //OJO 
+            if (result.modifiedCount) {
                 resolve(true);
             } else {
                 resolve(false);
@@ -82,4 +84,3 @@ exports.putProduct = (id) => {
         throw error.message;
     })
 }
-*/

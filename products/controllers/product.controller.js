@@ -26,7 +26,7 @@ exports.addProduct = (request, response) => {
         }
         if (product) {
 
-            console.log("Product: ", product);
+            console.log("Product: ", product.name);
             return response.status(200).send({ info: true });
         } else {
             console.error('error adding product');
@@ -54,22 +54,25 @@ exports.deleteProduct = (request, response) => {
     })
 }
 
-/* 
-exports.putProduct = (request, response) => {
-    console.log('received putProduct request');
-    console.log('products\controllers\product.controller.js, exports.putProduct', request.params);
-    productModel.putProduct(request.params.id).then((product, error) => {
+
+exports.putProduct = (request, response) => { 
+    console.log("received put product request");
+    console.log(request.body);
+    
+    productModel.putProduct(request.body).then((product, error) => {
         if (error) {
             throw error.message;
         }
         if (product) {
             return response.status(200).send({ ínfo: true });
         } else {
-            console.error('error on deleteProduct');
+            console.error('error on putProduct');
             return response.status(500);
         }
     }).catch(error => {
         throw error.message;
     })
+    
 }
- */
+
+
